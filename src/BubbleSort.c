@@ -16,7 +16,6 @@ void bubbleSort(int array[],int length)
 	
 }
 
-
 void singleBubbleSort(int array[],int size, int length)
 {
 	
@@ -32,9 +31,6 @@ void singleBubbleSort(int array[],int size, int length)
 		
 }
 	
-	
-
-
 void swap(int array[],int index1, int index2)
 {
 	int temp; //Create temporary path to story array[index1]
