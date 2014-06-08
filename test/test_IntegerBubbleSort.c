@@ -33,9 +33,21 @@ void test_integerCompare_2_3_should_return_minus1()
 void test_swap_1_2_should_return_2_1()
 {
 	int array[] = {1,2};
+	int v1 = 0 ,v2 = 1;
 	
-	integerSwap(array,0,1);
+	integerSwap(&array,&v1,&v2);
 	
-	TEST_ASSERT_EQUAL(2,array[0]);
-	TEST_ASSERT_EQUAL(1,array[1]);
+	TEST_ASSERT_EQUAL(2,array[v1]);
+	TEST_ASSERT_EQUAL(1,array[v2]);
+}
+
+void test_swap_1_2_should_do_nothing()
+{
+	int array[] = {1,2};
+	int v1 = 0 ,v2 = 0;
+	
+	integerSwap(&array,&v1,&v2);
+	
+	TEST_ASSERT_EQUAL(1,array[v1]);
+	TEST_ASSERT_EQUAL(1,array[v2]);
 }

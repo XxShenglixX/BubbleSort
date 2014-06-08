@@ -41,7 +41,10 @@ void integerSwap(void *array, void *index1, void *index2)
 {
 	int *value1 =(int *)index1;
 	int *value2 =(int *)index2;
-
-	int *temp = (int *)array;
-	printf("temp %d",*temp);
+	int *INT_array = (int *)array ;
+	int temp ;
+	
+	temp = INT_array[*value1] ;
+	INT_array[*value1] = INT_array[*value2] ;
+	INT_array[*value2] = temp ;
 }
