@@ -51,3 +51,27 @@ void test_swap_1_2_should_do_nothing()
 	TEST_ASSERT_EQUAL(1,array[v1]);
 	TEST_ASSERT_EQUAL(1,array[v2]);
 }
+
+void test_singleIntegerBubbleSort_given_3_2_1_should_return_1_3_2()
+{
+	int array[] = {3,2,1};
+	int size = 3 ,length = 3;
+	
+	singleIntegerBubbleSort(&array,&size,&length);
+	
+	TEST_ASSERT_EQUAL(1,array[0]);
+	TEST_ASSERT_EQUAL(3,array[1]);
+	TEST_ASSERT_EQUAL(2,array[2]);
+}
+
+void test_singleIntegerBubbleSort_given_3_2_1_size_2_should_return_3_1_2()
+{
+	int array[] = {3,2,1};
+	int size = 2 ,length = 3;
+	
+	singleIntegerBubbleSort(&array,&size,&length);
+	
+	TEST_ASSERT_EQUAL(3,array[0]);
+	TEST_ASSERT_EQUAL(1,array[1]);
+	TEST_ASSERT_EQUAL(2,array[2]);
+}

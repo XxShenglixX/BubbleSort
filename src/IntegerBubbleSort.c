@@ -48,3 +48,35 @@ void integerSwap(void *array, void *index1, void *index2)
 	INT_array[*value1] = INT_array[*value2] ;
 	INT_array[*value2] = temp ;
 }
+
+/** 
+ * Perform single bubble sort for an integer array
+ * 
+ * Input : 
+ *	array	is an array of integers
+ *	size	is the size of elements left needed to be swap
+ *	length	is the total number of elements in the array
+ *
+ * Precondition:
+ *	indices given must be within bounds of the array
+ */
+void singleIntegerBubbleSort(void *array,void *size,void *length)
+{
+	int *INT_array = (int *)array ;
+	int *array_size = (int *)size;
+	int *array_length = (int *)length ;
+	
+	while ( *array_size != 1)
+	{
+		int array_length_1 = *array_length - 1;
+		int array_length_2 = *array_length - 2 ;
+		int indicator = 0;
+		indicator = integerCompare(&INT_array[array_length_1], &INT_array[array_length_2]); 
+		if (indicator == -1)
+			integerSwap(INT_array,&array_length_1,&array_length_2);
+	
+		*array_length = *array_length - 1;
+		*array_size = *array_size - 1;	
+	}	
+		
+}
