@@ -78,5 +78,13 @@ void genericBubbleSort(void *array, int length,
 					   int (*compare)(void *v1, void *v2),
 					   void (*swap)(void *array, int index1,int index2))
 {
-
+	int i ;
+	int size =length;
+	
+	for (i =0 ; i < length - 1 ; i ++ )
+	{
+		genericSingleBubbleSort(array,size,length,compare,swap);
+		size -- ;
+	}
+	
 }
