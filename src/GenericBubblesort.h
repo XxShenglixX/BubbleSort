@@ -1,6 +1,8 @@
 #ifndef GenericBubblesort_H
 #define GenericBubblesort_H
-
+#include "CharacterBubbleSort.h"
+#include "DoubleBubbleSort.h"
+#include "IntegerBubbleSort.h"
 void genericSingleBubbleSort(void *array,int size, int length, 
 							 int (*compare)(void *v1, void *v2),
 							 void (*swap)(void *array, int index1,int index2));
