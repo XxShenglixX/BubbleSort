@@ -1,7 +1,7 @@
 #include "DoubleBubbleSort.h"
 #include <stdio.h>
 /** 
- * Compare 2 integers and return if greater,same,or
+ * Compare 2 doubles and return if greater,same,or
  * smaller.
  * 
  * Input : 
@@ -27,10 +27,10 @@ int doubleCompare(void *v1, void*v2)
 
 
 /** 
- * Swap 2 integers in the array given
+ * Swap 2 doubles in the array given
  * 
  * Input : 
- *	array	is an array of integers
+ *	array	is an array of doubles
  *	index1	is the index of the first integer in the array
  *	index2	is the index of the second integer in the array
  *
@@ -48,10 +48,10 @@ void doubleSwap(void *array, int index1, int index2)
 }
 
 /** 
- * Perform single bubble sort for an integer array
+ * Perform single bubble sort for an double array
  * 
  * Input : 
- *	array	is an array of integers
+ *	array	is an array of doubles
  *	size	is the size of elements left needed to be swap
  *	length	is the total number of elements in the array
  *
@@ -79,10 +79,10 @@ void singleDoubleBubbleSort(void *array,int size,int length)
 }
 
 /** 
- * Perform full bubble sort for an integer array
+ * Perform full bubble sort for an double array
  * 
  * Input : 
- *	array	is an array of integers
+ *	array	is an array of doubles
  *	length	is the total number of elements in the array
  *
  * Precondition:
