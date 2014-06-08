@@ -37,16 +37,14 @@ int integerCompare(void *v1, void*v2)
  * Precondition:
  *	indices given must be within bounds of the array
  */
-void integerSwap(void *array, void *index1, void *index2)
-{
-	int *value1 =(int *)index1;
-	int *value2 =(int *)index2;
+void integerSwap(void *array, int index1, int index2)
+{	
 	int *INT_array = (int *)array ;
 	int temp ;
 	
-	temp = INT_array[*value1] ;
-	INT_array[*value1] = INT_array[*value2] ;
-	INT_array[*value2] = temp ;
+	temp = INT_array[index1] ;
+	INT_array[index1] = INT_array[index2] ;
+	INT_array[index2] = temp ;
 }
 
 /** 
@@ -60,23 +58,46 @@ void integerSwap(void *array, void *index1, void *index2)
  * Precondition:
  *	indices given must be within bounds of the array
  */
-void singleIntegerBubbleSort(void *array,void *size,void *length)
+void singleIntegerBubbleSort(void *array,int size,int length)
 {
 	int *INT_array = (int *)array ;
-	int *array_size = (int *)size;
-	int *array_length = (int *)length ;
+	int indicator,length_1,length_2;
 	
-	while ( *array_size != 1)
+	while ( size != 1)
 	{
-		int array_length_1 = *array_length - 1;
-		int array_length_2 = *array_length - 2 ;
-		int indicator = 0;
-		indicator = integerCompare(&INT_array[array_length_1], &INT_array[array_length_2]); 
+		length_1 = length - 1;
+		length_2 = length - 2;
+		indicator = 0;
+		indicator = integerCompare(&INT_array[length_1], &INT_array[length_2]); 
 		if (indicator == -1)
-			integerSwap(INT_array,&array_length_1,&array_length_2);
+			integerSwap(INT_array,length_1,length_2);
 	
-		*array_length = *array_length - 1;
-		*array_size = *array_size - 1;	
+		size --;
+		length --;
 	}	
 		
+}
+
+/** 
+ * Perform full bubble sort for an integer array
+ * 
+ * Input : 
+ *	array	is an array of integers
+ *	length	is the total number of elements in the array
+ *
+ * Precondition:
+ *	indices given must be within bounds of the array
+ */
+void IntegerBubbleSort(void *array,int length)
+{
+	int i ;
+	int size = length;
+	int *INT_array = (int *) array;
+	
+	
+	for ( i = 0 ; i < (length - 1) ; i ++ )
+	{
+		singleIntegerBubbleSort(INT_array,size,length);
+		size -- ;
+	}
 }
